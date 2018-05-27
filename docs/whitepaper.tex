@@ -268,7 +268,17 @@ This request contains:
 	\item[User key] This key gets send to the user whenever he buys the script
 	\item[Script key] This key is generated when you create the script in the admin dashboard. It is embedded into the encrypted auth module.
 	\item[Challenge] This is the most interesting part of the request. Both the client and the server have a shared secret. The client generates a challenge value for the server (a random number) attaches it to the request. The servers response will contain hash(challenge value + secret). This allows the client to check if his hash matches the server one.
+	As hash method i propose SHA-256 for speed and security.
+	Since there is no good way in the Hanbot api to check if the HTTPS cert if real, i propose on a quite large secret and challenge value. In the reference implementation the secret is 4096 bit long and the random value is 256 bit.
 	\item[checksum] A checksum of all fields
 \end{itemize}
+
+\subsection{Disclaimer}
+All security guarantees that this auth is trying to make will no longer hold, if somebody reverse engineers hanbots script encryption.
+
+\subsection{License}
+This paper is written under CC-BY-SA-4.0\\
+The author can be contacted under scarjit@aol.com (Include "S1mple Auth" in your email topic).\\
+If you make changes to the code or this paper i would be happy to be informed, but this is not required.
 
 \end{document}

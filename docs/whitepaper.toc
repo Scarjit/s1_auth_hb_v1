@@ -12,3 +12,5 @@
 \contentsline {subsection}{Shop}{4}
 \contentsline {subsection}{External payment provider}{5}
 \contentsline {section}{In depth view on the auth request}{5}
+\contentsline {subsection}{Disclaimer}{5}
+\contentsline {subsection}{License}{5}

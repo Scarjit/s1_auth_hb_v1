@@ -1,0 +1,274 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+% This template uses a Perl script as an example snippet of code, most other
+% languages are also usable. Configure them in the "CODE INCLUSION 
+% CONFIGURATION" section.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center head
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0} % This is the color used for comments
+\lstdefinestyle{lua}{
+	language=[5.1]Lua,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{magenta},
+	stringstyle=\color{blue},
+	commentstyle=\color{black!50}
+}
+
+
+% Creates a new command to include a perl script, the first parameter is the filename of the script (without .pl), the second parameter is the caption
+\newcommand{\perlscript}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.pl}
+\end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{S1mple Auth} % Assignment title
+\newcommand{\hmwkDueDate}{Sunday ,\ 27.\ May,\ 2018} % Due date
+\newcommand{\hmwkClass}{Hanbot} % Course/class
+\newcommand{\hmwkClassTime}{Revision 1} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Version 1} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{S1mple} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Last\ change\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\section{Intro}
+	This white-paper serves as a documentation of the actual reference implementation, as a read-me for common errors and also
+	as an in depth explanation about our design choices regarding this authentication (auth).
+
+\section{Goal}
+	The goal of this auth is to provide an easy to use auth for both users and script developers, while maintaining a very
+	high level of security and customizability.
+	A normal user should never find an auth annoying to use, so we tried to simplify it as much as possible.
+	Also a developer should have no issues implementing our auth, even if he never used it before.
+
+\section{For users}
+	This white-paper mostly discusses the technical aspect of the auth.
+	If you got trouble authenticating yourself, please contact me or the scripts author.
+
+\section{For developers}
+	If you want to integrate this auth, take a look at the provided lua and php code.
+	If you need any help with integrating it, please feel free to contact me.
+	In case that you don't want to host the auth server yourself, please contact me, so i can help you integrating it on my server 
+
+
+\section{Auth flow}
+Please checkout the graphic to find out what i am referring to.
+\subsection{Client}
+\begin{itemize}
+	\item[Load scripts] 
+	The client just has to check the script in the ingame menu.
+	If he has bought it on the website, he will be able to use it, if not he will be given a trial time (given that the author enables this feature)
+\end{itemize}
+\subsection{Script}
+\begin{itemize}
+	\item[Load auth module] The script loads the auth module and wait for it to return
+	\item[Load script] The script loads normally
+	\item[Display Error] The auth module has returned an error and the script is not supposed to load
+\end{itemize}
+\subsection{Auth module}
+\begin{itemize}
+	\item[Verify integrity] The auth module does some basic checks to make sure that the script was not tampered
+	\item[Begin authentification] The auth module assembles all necessary data (username, user key, script key, auth url) and then prepares an HTTPS request for the Auth API. It then checks if the HTTPS cert was not tampered and sends the request combined with an challenge.
+	\item[End auth] The Auth API has responded to the request. The auth module will now interpret the data and verifies that the challenge was responded correctly
+\end{itemize}
+\subsection{Auth API}
+\begin{itemize}
+	\item[Is correct API call] The api verifies that the request was formed correctly
+	\item[Return status] The api returns the status of the auth and the challenge response.
+	\item[Create log entry] The api will call the SQL server to create a log entry of the auth event, containing the status, challenge, user and script
+	\item[Generate key] Generates a new user key
+	\item[Send email to buyer] Invokes php mail to send the key to the buyer
+\end{itemize}
+\subsection{SQL Server}
+\begin{itemize}
+	\item[Check username and key] The SQL server checks if the username and key exist in the database
+	\item[Can have trial] The SQL server checks if the user hasn't yet had a trial
+	\item[Insert log entry] Insert an log entry into the DB
+	\item[Select log] Selects the relevant log entries (Only for the current script author and other optional params)
+	\item[Insert user] Inserts a new user into the DB
+	\item[Modify ban] Modifies the ban status and time of a user
+	\item[Modify script access] Modifies the users access to specific scripts
+	\item[Insert script] Inserts a new script into the DB
+	\item[Modify script] Modifies script name, status and optional parameters
+	\item[Select scripts] Selects all scripts (or scripts of a author / champ)
+\end{itemize}
+\subsection{Admin website}
+\begin{itemize}
+	\item[View log] Displays the log files of the script dev
+	\item[Insert new user] Manually inserts a user into the DB
+	\item[(Un)Ban User] Changes the ban status of a user for specific scripts or global $^1$
+	\item[Add/Remove script access] Adds or removes a users access to a specific script
+	\item[Create script] Create a new script with options and generate auth module
+	\item[Modify scripts] Modify script options and regenerate auth module
+\end{itemize}
+\subsection{Shop}
+\begin{itemize}
+	\item[Get paid scripts] Show all paid scripts or filter by author / champ
+	\item[Check auth status] Allows a user to check what scripts he is authenticated for
+	\item[Buy scripts] Invokes an external payment provider to allow a user to buy a script
+	\item[Show status] Shows if the payment was successful
+\end{itemize}
+\subsection{External payment provider}
+\begin{itemize}
+	\item[Bought] External API that returns if the user has actually paid.
+\end{itemize}
+$^1$ global bans are only allowed, if you are an super admin or on request.
+
+\section{In depth view on the auth request}
+The challenges we face when writing an authentication are the following:
+\begin{itemize}
+	\item The user should not be annoyed
+	\item The auth has to be difficult to crack
+	\item The hanbot api is limited
+	\item Lua is slow
+\end{itemize}
+To solve this challenges we propose the following:\\
+The client side auth module prepares a HTTPS post request.
+This request contains:
+\begin{itemize}
+	\item[Username] The Hanbot username of the client
+	\item[User key] This key gets send to the user whenever he buys the script
+	\item[Script key] This key is generated when you create the script in the admin dashboard. It is embedded into the encrypted auth module.
+	\item[Challenge] This is the most interesting part of the request. Both the client and the server have a shared secret. The client generates a challenge value for the server (a random number) attaches it to the request. The servers response will contain hash(challenge value + secret). This allows the client to check if his hash matches the server one.
+	\item[checksum] A checksum of all fields
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,14 @@
+\contentsline {section}{Intro}{3}
+\contentsline {section}{Goal}{3}
+\contentsline {section}{For users}{3}
+\contentsline {section}{For developers}{3}
+\contentsline {section}{Auth flow}{3}
+\contentsline {subsection}{Client}{3}
+\contentsline {subsection}{Script}{3}
+\contentsline {subsection}{Auth module}{3}
+\contentsline {subsection}{Auth API}{4}
+\contentsline {subsection}{SQL Server}{4}
+\contentsline {subsection}{Admin website}{4}
+\contentsline {subsection}{Shop}{4}
+\contentsline {subsection}{External payment provider}{5}
+\contentsline {section}{In depth view on the auth request}{5}
